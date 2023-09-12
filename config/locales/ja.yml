@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      post: スケジュール
+    attributes:
+      post:
+        title: タイトル
+        start_at: 開始日
+        end_at: 終了日
+        memo: スケジュールメモ
+  date:
+    formats:
+      default: ! '%Y/%m/%d'

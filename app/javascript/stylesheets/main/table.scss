@@ -1,0 +1,47 @@
+.TableResponsive {
+  box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.02), 0px 1px 3px rgba(50, 50, 93, 0.15);
+}
+
+.Table {
+  background-color: $white;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0;
+
+  th,
+  td {
+    word-break: keep-all;
+  }
+
+  th {
+    border-color: $border-light-gray !important;
+    padding: 10px 16px;
+  }
+
+  td {
+    padding: 20px 16px;
+  }
+}
+
+.DetailTable {
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 0;
+  vertical-align: middle;
+
+  th,
+  td {
+    padding: 20px 16px;
+    word-break: keep-all;
+  }
+
+  th {
+    background-color: #F7F9FC;
+    border-right-width: 0px;
+    width: 144px;
+  }
+
+  td {
+    border-left-width: 0px;
+  }
+}

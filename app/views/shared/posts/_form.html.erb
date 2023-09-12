@@ -1,0 +1,43 @@
+<%= form_with model: post, class: "row g-3 Form", local: true do |f| %>
+  <div class="col-12">
+    <%= f.label :title, "タイトル", class: "form-label Form__label--required" %>
+    <%= f.text_field :title, class: "form-control", placeholder: "タイトル" %>
+    <%= render "shared/error_message", object: post, key: "title" %>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.label :start_at, "開始日", class: "form-label Form__label--required" %>
+    <div class="Form__date-input">
+      <%= f.text_field :start_at, class: "form-control js-picker", placeholder: "---- / -- / --" %>
+      <%= render "shared/error_message", object: post, key: "start_at" %>
+    </div>
+  </div>
+
+  <div class="col-md-6">
+    <%= f.label :end_at, "終了日", class: "form-label Form__label--required" %>
+    <div class="Form__date-input">
+      <%= f.text_field :end_at, class: "form-control js-picker", placeholder: "---- / -- / --" %>
+      <%= render "shared/error_message", object: post, key: "end_at" %>
+    </div>
+  </div>
+
+  <div class="col-12 form-check Form__check">
+    <%= f.check_box :is_all_day, class: "form-check-input Form__check-input" %>
+    <%= f.label :is_all_day, "終日の場合はチェックを入れます", class: "form-check-label Form__check-label" %>
+  </div>
+
+  <div class="col-12">
+    <%= f.label :memo, "スケジュールメモ", class: "form-label" %>
+    <%= f.text_area :memo, class: "form-control", placeholder: "メモを入力する" %>
+  </div>
+
+  <div class="FormContainer__buttons">
+    <%= link_to :posts do %>
+      <button type="button" class="btn Button Button--secondary">
+        キャンセル
+      </button>
+    <% end %>
+
+    <%= f.submit "保存", class: "btn Button Button--primary" %>
+  </div>
+<% end %>

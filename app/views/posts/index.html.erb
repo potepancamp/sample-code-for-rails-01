@@ -1,0 +1,93 @@
+<div class="PageTitle">
+  <h2 class="PageTitle__text">
+    予定一覧
+  </h2>
+
+  <%= link_to :new_post do %>
+    <button class="btn btn-primary Button Button--primary">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-circle-fill Button__icon" viewBox="0 0 16 16">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3v-3z"/>
+      </svg>
+      新規追加
+    </button>
+  <% end %>
+</div>
+
+<div class="table-responsive TableResponsive">
+  <table class="table Table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>タイトル</th>
+        <th>開始日</th>
+        <th>終了日</th>
+        <th>終日</th>
+        <th>更新日時</th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% if @posts.count > 0 %>
+        <% @posts.each do |post| %>
+          <tr>
+            <td>
+              <%= post.id %>
+            </td>
+
+            <td>
+              <%= post.title %>
+            </td>
+
+            <td>
+              <%= l(post.start_at, format: :default) %>
+            </td>
+
+            <td>
+              <%= l(post.end_at, format: :default) %>
+            </td>
+
+            <td>
+              <% if post.is_all_day %>
+                <strong>○</strong>
+              <% end %>
+            </td>
+
+            <td>
+              <%= post.updated_at.to_s(:datetime_jp_detail) %>
+            </td>
+
+            <td>
+              <%= link_to "詳細", post %>
+            </td>
+
+            <td>
+              <%= link_to "編集", [:edit, post] %>
+            </td>
+
+            <td>
+              <%= link_to "削除",
+                          post,
+                          method: :delete,
+                          title: "予定を削除しますか？",
+                          data: {
+                            confirm: "「#{post.title}」を削除してよろしいですか？<br>この操作は取り消せません。",
+                            commit: "削除",
+                            cancel: "キャンセル"
+                          }
+              %>
+            </td>
+          </tr>
+        <% end %>
+      <% else %>
+        <td colspan="9">
+          現在登録しているスケジュールはありません
+        </td>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+<%= render "shared/footer" %>

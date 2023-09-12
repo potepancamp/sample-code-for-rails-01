@@ -1,0 +1,22 @@
+.Link {
+  font-size: 12px;
+  font-weight: 700;
+  line-height: 18px;
+
+  &--with-icon {
+    align-items: center;
+    display: flex;
+    margin-bottom: 15px;
+    width: fit-content;
+  }
+
+  &__icon {
+    height: 25px;
+    margin-left: -5px;
+    width: 25px;
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .Link__icon {
+  margin-top: -2px;
+}

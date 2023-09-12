@@ -1,0 +1,13 @@
+.Navbar {
+  background-color: $background-navy;
+  height: 50px;
+  margin-bottom: 24px;
+
+  &__text {
+    color: $white;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    margin: 0 auto;
+  }
+}

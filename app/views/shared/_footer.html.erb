@@ -1,0 +1,13 @@
+<footer class="card Footer">
+  <div class="card-body FooterBody">
+    <% if current_page?(posts_path) %>
+      <p class="FooterBody__count">
+        予定合計&nbsp;&nbsp;<span><%= @posts.count %></span>件
+      </p>
+    <% end %>
+
+    <p class="FooterBody__datetime">
+      本日の日付&nbsp;<%= Time.zone.now.to_s(:datetime_jp) %>
+    </p>
+  </div>
+</footer>

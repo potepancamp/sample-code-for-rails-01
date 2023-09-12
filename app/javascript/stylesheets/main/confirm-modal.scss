@@ -1,0 +1,54 @@
+@import "./button";
+
+.modal-dialog {
+  height: fit-content;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.modal-header {
+  border-bottom: none;
+
+  h5 {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  button {
+    display: none;
+  }
+}
+
+.modal-body {
+  padding: 0.5rem 1rem;
+}
+
+.modal-footer {
+  border-top: none;
+
+  button {
+    @include basic-button;
+
+    &.cancel {
+      border-color: $border-light-gray;
+    }
+
+    &.commit {
+      background-color: $primary-red;
+      border-color: $primary-red;
+    }
+  }
+}
+
+.fade:not(.show) {
+  opacity: 1.0;
+}
+
+.modal-backdrop.fade {
+  opacity: 0.5;
+}

@@ -1,0 +1,12 @@
+.PageTitle {
+  align-items: baseline;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 18px;
+
+  &__text {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+}

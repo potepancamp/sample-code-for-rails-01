@@ -1,0 +1,48 @@
+@mixin basic-button {
+  border-radius: 4px;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  height: 45px;
+  line-height: 18px;
+  padding: 12px 20px;
+
+  &:focus {
+    box-shadow: none;
+  }
+}
+
+.Button {
+  @include basic-button;
+
+  &--primary {
+    background-color: $primary-blue;
+    color: $white;
+
+    &:hover {
+      color: $white;
+    }
+  }
+
+  &--secondary {
+    border-color: $border-light-gray;
+  }
+
+  &--edit {
+    border-color: $primary-blue;
+    color: $primary-blue;
+
+    &:hover {
+      color: $primary-blue;
+    }
+  }
+
+  &__icon {
+    margin-top: -2px;
+    margin-right: 4px;
+  }
+}
+
+_::-webkit-full-page-media, _:future, :root .Button {
+  line-height: 22px;
+}

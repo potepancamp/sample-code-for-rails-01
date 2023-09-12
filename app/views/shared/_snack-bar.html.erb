@@ -1,0 +1,7 @@
+<div class="SnackBar">
+  <% flash.each do |key, value| %>
+    <p class="alert <%= key %>">
+      <%= value %>
+    </p>
+  <% end %>
+</div>
