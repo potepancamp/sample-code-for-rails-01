@@ -7,7 +7,7 @@
     <% end %>
 
     <p class="FooterBody__datetime">
-      本日の日付&nbsp;<%= Time.zone.now.to_s(:datetime_jp) %>
+      本日の日付&nbsp;<%= Time.zone.now.strftime('%Y/%m/%d') %>
     </p>
   </div>
 </footer>
