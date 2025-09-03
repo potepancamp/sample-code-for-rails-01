@@ -33,6 +33,9 @@ RUN yarn install
 # アプリケーションのコードをコピー
 COPY . .
 
+# JavaScriptとCSSをビルド
+RUN yarn build
+
 # アセットをプリコンパイル
 RUN bundle exec rails assets:precompile
 
